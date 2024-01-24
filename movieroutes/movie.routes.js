@@ -95,4 +95,5 @@ router.delete("/netflixmovie/delete/:id", async (req, res) => {
     .send({ message: "The movie is deleted from the database" });
 });
 
+
 export default router;

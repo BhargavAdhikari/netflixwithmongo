@@ -1,11 +1,13 @@
 import express from "express";
 import connectDB from "./connect.db.js";
-import movieRouter from "./routes/movie.routes.js";
+import movieRouter from "./movieroutes/movie.routes.js";
+import userRouter from "./userroutes/user.routes.js";
 
 const app = express();
 
 app.use(express.json());
 app.use(movieRouter);
+app.use(userRouter);
 connectDB();
 
 const PORT = 6000;
