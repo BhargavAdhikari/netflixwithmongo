@@ -1,8 +1,7 @@
 export const validationFunction = (validationSchema) => {
   return async (req, res, next) => {
     try {
-      const validatedData = await validationSchema.validate(req.body);
-      req.body = validatedData;
+      req.body = await validationSchema.validate(req.body);
 
       next();
     } catch (error) {

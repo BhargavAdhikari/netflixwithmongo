@@ -16,7 +16,24 @@ const movieSchema = new mongoose.Schema({
   released: {
     type: Number,
     required: true,
-    min: 0,
+    min: 1920,
+  },
+
+  genres: {
+    type: [String],
+    required: true,
+    oneOf: [
+      "Action",
+      "Thriller",
+      "Drama",
+      "Sci-Fi",
+      "Crime",
+      "Horror",
+      "Adventure",
+      "Mystery",
+      "Documentary",
+      "Comedy",
+    ],
   },
 
   director: {
